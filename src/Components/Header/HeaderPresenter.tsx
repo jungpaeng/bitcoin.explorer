@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -92,13 +92,18 @@ const ListItem = styled.li`
   }
 `;
 
+interface ISLink {
+  isActive: boolean;
+}
+
 const SLink = styled(Link)`
   position: relative;
   display: block;
   white-space: nowrap;
   width: 100%;
   height: 50px;
-  color: #9aa3a8;
+  background: ${(props: ISLink) => (props.isActive && '#4c515d')};
+  color: ${(props: ISLink) => (props.isActive ? '#fff' : '#9aa3a8')};
   transition: all 0.15s ease-in-out;
 
   &:hover {
@@ -158,6 +163,10 @@ class HeaderPresenter extends React.Component<IProps, IState> {
     const { children } = this.props;
     const { menuStatus } = this.state;
 
+    if (typeof window === 'undefined') {
+      return null;
+    }
+
     return(
       <>
         <MenuStatus
@@ -173,19 +182,28 @@ class HeaderPresenter extends React.Component<IProps, IState> {
           </label>
           <List>
             <ListItem>
-              <SLink to="">
+              <SLink
+                isActive={window.location.pathname === '/'}
+                to="/"
+              >
                 <i className="fas fa-home" />
                 <Span>Home</Span>
               </SLink>
             </ListItem>
             <ListItem>
-              <SLink to="">
+              <SLink
+                isActive={window.location.pathname === '/blocks'}
+                to="/blocks"
+              >
                 <i className="fas fa-square" />
                 <Span>Blocks</Span>
               </SLink>
             </ListItem>
             <ListItem>
-              <SLink to="">
+              <SLink
+                isActive={window.location.pathname === '/transactions'}
+                to="/transactions"
+              >
                 <i className="fas fa-dollar-sign" />
                 <Span>Transactions</Span>
               </SLink>
