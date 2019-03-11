@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 import { IBlock, ITransaction } from '../../@types/block';
-import { API_URL } from '../../contants';
+import { API_URL, WS_URL } from '../../contants';
 import typography from '../../typography';
 import AppPresenter from './AppPresenter';
 
@@ -29,6 +29,13 @@ class App extends Component<{}, IState> {
     transactions: [],
   };
 
+  public _connectToWs = () => {
+    const ws = new WebSocket(WS_URL);
+    ws.addEventListener('message', message => {
+      console.log(message);
+    });
+  }
+
   public _getData = async() => {
     const request = await axios.get<IBlock[]>(`${API_URL}/block`);
     const blocks = request.data.reverse();
@@ -42,6 +49,7 @@ class App extends Component<{}, IState> {
   }
 
   public componentDidMount() {
+    this._connectToWs();
     this._getData();
   }
 
