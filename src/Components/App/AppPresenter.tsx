@@ -11,7 +11,9 @@ const AppContainer = styled.div`
 const AppPresenter = () => (
   <BrowserRouter>
     <AppContainer>
-      <Header />
+      <Header>
+        <h1>Header TEST</h1>
+      </Header>
     </AppContainer>
   </BrowserRouter>
 );

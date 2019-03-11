@@ -9,6 +9,10 @@ const MenuStatus = styled.input`
     & ~ nav {
       width: 250px;
 
+      & label[class="menu_state"] i::before {
+        content: "\f053";
+      }
+
       & ul {
         width: 100%;
         & li a i {
@@ -19,10 +23,10 @@ const MenuStatus = styled.input`
           transition: opacity 0.25s ease-in-out;
         }
       }
+    }
 
-      & label[class="menu_state"] i::before {
-        content: "\f053";
-      }
+    & ~ main {
+      left: 250px;
     }
   }
 `;
@@ -125,11 +129,22 @@ const Span = styled.span`
   transition: opacity 0.1s ease-in-out;
 `;
 
+const Main = styled.main`
+  position: absolute;
+  transition: all 0.15s ease-in-out;
+  top: 0;
+  left: 50px;
+`;
+
+interface IProps {
+  children: React.ReactNode;
+}
+
 interface IState {
   menuStatus: boolean;
 }
 
-class HeaderPresenter extends React.Component<any, IState> {
+class HeaderPresenter extends React.Component<IProps, IState> {
   public state: IState = {
     menuStatus: true,
   };
@@ -140,6 +155,7 @@ class HeaderPresenter extends React.Component<any, IState> {
   }
 
   public render() {
+    const { children } = this.props;
     const { menuStatus } = this.state;
 
     return(
@@ -169,7 +185,10 @@ class HeaderPresenter extends React.Component<any, IState> {
               </SLink>
             </ListItem>
           </List>
-        </Nav>;
+        </Nav>
+        <Main>
+          {children}
+        </Main>
       </>
     );
   }
