@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { IBlock, ITransaction } from '../../@types/block';
 import { BlocksHeader, BlocksRow, Card, TxHeader, TxRow } from '../../Components/Shared';
+import { getDateStrFromSeconds } from '../../utls';
 
 export interface IHomeProps {
   blocks: IBlock[];
@@ -24,7 +25,7 @@ const HomePresenter: FC<IHomeProps> = ({ blocks, transactions }) => (
             key={block.hash}
             index={block.index}
             hash={block.hash}
-            timeStamp={block.timeStamp}
+            timeStamp={getDateStrFromSeconds(block.timeStamp)}
             difficulty={block.difficulty}
           />
         ))}

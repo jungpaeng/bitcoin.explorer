@@ -66,7 +66,7 @@ export const TxHeader: FC = () => (
 interface IBlockRow {
   index: number;
   hash: string;
-  timeStamp: number;
+  timeStamp: string;
   difficulty: number;
 }
 
