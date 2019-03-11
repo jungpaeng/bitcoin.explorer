@@ -11,27 +11,33 @@ const AppContainer = styled.div`
   min-height: 100vh;
 `;
 
-const AppPresenter: FC = () => (
+interface IProps {
+  isLoading: boolean;
+}
+
+const AppPresenter: FC<IProps> = ({ isLoading }) => (
   <BrowserRouter>
     <AppContainer>
       <Header>
-        <Switch>
-          <Route
-            exact={true}
-            path={'/'}
-            component={Home}
-          />
-          <Route
-            exact={true}
-            path={'/blocks'}
-            component={Blocks}
-          />
-          <Route
-            exact={true}
-            path={'/transactions'}
-            component={Transactions}
-          />
-        </Switch>
+        {!isLoading && (
+          <Switch>
+            <Route
+              exact={true}
+              path={'/'}
+              component={Home}
+            />
+            <Route
+              exact={true}
+              path={'/blocks'}
+              component={Blocks}
+            />
+            <Route
+              exact={true}
+              path={'/transactions'}
+              component={Transactions}
+            />
+          </Switch>
+        )}
       </Header>
     </AppContainer>
   </BrowserRouter>
