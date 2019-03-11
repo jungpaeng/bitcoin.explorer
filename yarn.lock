@@ -1023,6 +1023,18 @@
   dependencies:
     "@types/jest-diff" "*"
 
+"@types/lodash.flatten@^4.4.6":
+  version "4.4.6"
+  resolved "https://registry.yarnpkg.com/@types/lodash.flatten/-/lodash.flatten-4.4.6.tgz#b74c3267c87e44e603137d4621e8a9396b6551f5"
+  integrity sha512-omCBl4M8EJSmf2DZqh4/zwjgXQpzC7YO/PXTcG8rI9r7xun8CohrHeNx8HZRkqWc61uJfIaZop9MwJEXPVssHw==
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash@*":
+  version "4.14.122"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.122.tgz#3e31394c38cf1e5949fb54c1192cbc406f152c6c"
+  integrity sha512-9IdED8wU93ty8gP06ninox+42SBSJHp2IAamsSYMUY76mshRTeUsid/gtbl8ovnOwy8im41ib4cxTiIYMXGKew==
+
 "@types/node@*":
   version "11.10.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.10.5.tgz#fbaca34086bdc118011e1f05c47688d432f2d571"
@@ -6148,6 +6160,11 @@ lodash.camelcase@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
   integrity sha1-soqmKIorn8ZRA1x3EfZathkDMaY=
+
+lodash.flatten@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.flatten/-/lodash.flatten-4.4.0.tgz#f31c22225a9632d2bbf8e4addbef240aa765a61f"
+  integrity sha1-8xwiIlqWMtK7+OSt2+8kCqdlph8=
 
 lodash.get@^4.4.2:
   version "4.4.2"
