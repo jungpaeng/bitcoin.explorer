@@ -1,4 +1,5 @@
 import axios from 'axios';
+import flatten from 'lodash.flatten';
 import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
@@ -17,21 +18,25 @@ const GlobalStyle = createGlobalStyle`
 interface IState {
   blocks: [];
   isLoading: boolean;
+  txs: { [key: string]: any };
 }
 
 class App extends Component<{}, IState> {
   public state: IState = {
     blocks: [],
     isLoading: true,
+    txs: {},
   };
 
   public _getData = async() => {
     const request = await axios.get(`${API_URL}/block`);
-    const blocks = request.data;
+    const blocks = request.data.reverse();
+    const txs = flatten(blocks.map((block: any) => block.data));
 
     this.setState({
       blocks,
       isLoading: false,
+      txs,
     });
   }
 
