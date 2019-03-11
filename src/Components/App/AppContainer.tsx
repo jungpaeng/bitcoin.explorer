@@ -24,7 +24,7 @@ class App extends Component<{}, IState> {
   };
 
   public _getData = async() => {
-    const request = await axios.get(`${API_URL}/blocks`);
+    const request = await axios.get(`${API_URL}/block`);
     console.log(request);
   }
 
