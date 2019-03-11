@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import styled from 'styled-components';
+import Header from '../Header';
 
 const AppContainer = styled.div`
   background-color: #fafafa;
@@ -8,11 +9,11 @@ const AppContainer = styled.div`
 `;
 
 const AppPresenter = () => (
-  <AppContainer>
-    <BrowserRouter>
-      {/** TODO */}
-    </BrowserRouter>
-  </AppContainer>
+  <BrowserRouter>
+    <AppContainer>
+      <Header />
+    </AppContainer>
+  </BrowserRouter>
 );
 
 export default AppPresenter;
