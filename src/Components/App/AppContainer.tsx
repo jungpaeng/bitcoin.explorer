@@ -12,15 +12,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-class App extends React.Component {
-  public render() {
-    return (
-      <>
-        <GlobalStyle />
-        <AppPresenter />
-      </>
-    );
-  }
-}
+const App: React.FC = () => (
+  <>
+    <GlobalStyle />
+    <AppPresenter />
+  </>
+);
 
 export default App;
