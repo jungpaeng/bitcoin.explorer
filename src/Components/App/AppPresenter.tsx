@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
+import Blocks from '../../Routes/Blocks';
+import Home from '../../Routes/Home';
+import Transactions from '../../Routes/Transactions';
 import Header from '../Header';
-import Blocks from '../Routes/Blocks';
-import Home from '../Routes/Home';
-import Transactions from '../Routes/Transactions';
 
 const AppContainer = styled.div`
   background-color: #fafafa;
