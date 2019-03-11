@@ -12,10 +12,12 @@ const AppContainer = styled.div`
 `;
 
 interface IProps {
+  blocks: [];
   isLoading: boolean;
+  transactions: any[];
 }
 
-const AppPresenter: FC<IProps> = ({ isLoading }) => (
+const AppPresenter: FC<IProps> = ({ blocks, isLoading, transactions }) => (
   <BrowserRouter>
     <AppContainer>
       <Header>
@@ -24,17 +26,26 @@ const AppPresenter: FC<IProps> = ({ isLoading }) => (
             <Route
               exact={true}
               path={'/'}
-              component={Home}
+              render={() => (
+                <Home
+                  blocks={blocks.slice(0, 5)}
+                  transactions={transactions.slice(0, 5)}
+                />
+              )}
             />
             <Route
               exact={true}
               path={'/blocks'}
-              component={Blocks}
+              render={() => (
+                <Blocks blocks={blocks} />
+              )}
             />
             <Route
               exact={true}
               path={'/transactions'}
-              component={Transactions}
+              render={() => (
+                <Transactions transactions={transactions} />
+              )}
             />
           </Switch>
         )}

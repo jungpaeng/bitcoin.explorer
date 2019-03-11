@@ -18,14 +18,14 @@ const GlobalStyle = createGlobalStyle`
 interface IState {
   blocks: [];
   isLoading: boolean;
-  txs: { [key: string]: any };
+  transactions: any[];
 }
 
 class App extends Component<{}, IState> {
   public state: IState = {
     blocks: [],
     isLoading: true,
-    txs: {},
+    transactions: [],
   };
 
   public _getData = async() => {
@@ -36,7 +36,7 @@ class App extends Component<{}, IState> {
     this.setState({
       blocks,
       isLoading: false,
-      txs,
+      transactions: txs,
     });
   }
 
@@ -45,12 +45,16 @@ class App extends Component<{}, IState> {
   }
 
   public render() {
-    const { isLoading } = this.state;
+    const { blocks, isLoading, transactions } = this.state;
 
     return (
       <>
         <GlobalStyle />
-        <AppPresenter isLoading={isLoading}/>
+        <AppPresenter
+          blocks={blocks}
+          isLoading={isLoading}
+          transactions={transactions}
+        />
       </>
     );
   }
