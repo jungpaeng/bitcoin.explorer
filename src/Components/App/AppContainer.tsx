@@ -15,17 +15,24 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 interface IState {
+  blocks: [];
   isLoading: boolean;
 }
 
 class App extends Component<{}, IState> {
   public state: IState = {
+    blocks: [],
     isLoading: true,
   };
 
   public _getData = async() => {
     const request = await axios.get(`${API_URL}/block`);
-    console.log(request);
+    const blocks = request.data;
+
+    this.setState({
+      blocks,
+      isLoading: false,
+    });
   }
 
   public componentDidMount() {
