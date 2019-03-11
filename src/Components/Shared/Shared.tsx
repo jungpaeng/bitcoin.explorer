@@ -80,7 +80,7 @@ export const BlocksRow: FC<IBlockRow> = ({ index, hash, timeStamp, difficulty })
 );
 
 interface ITxRow {
-  id: number;
+  id: string;
   insOuts: string;
   amount: number;
 }
