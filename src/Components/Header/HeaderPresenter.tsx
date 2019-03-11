@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Component, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -142,14 +142,14 @@ const Main = styled.main`
 `;
 
 interface IProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 interface IState {
   menuStatus: boolean;
 }
 
-class HeaderPresenter extends React.Component<IProps, IState> {
+class HeaderPresenter extends Component<IProps, IState> {
   public state: IState = {
     menuStatus: true,
   };

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FC } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from '../Header';
@@ -8,7 +8,7 @@ const AppContainer = styled.div`
   min-height: 100vh;
 `;
 
-const AppPresenter = () => (
+const AppPresenter: FC = () => (
   <BrowserRouter>
     <AppContainer>
       <Header>

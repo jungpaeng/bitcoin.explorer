@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FC } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 import typography from '../../typography';
@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const App: React.FC = () => (
+const App: FC = () => (
   <>
     <GlobalStyle />
     <AppPresenter />
