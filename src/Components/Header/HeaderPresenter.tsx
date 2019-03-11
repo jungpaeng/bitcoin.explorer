@@ -172,6 +172,7 @@ class HeaderPresenter extends Component<IProps, IState> {
         <MenuStatus
           type="checkbox"
           checked={menuStatus}
+          readOnly={true}
         />
         <Nav>
           <label
