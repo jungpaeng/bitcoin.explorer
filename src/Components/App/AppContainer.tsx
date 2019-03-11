@@ -7,6 +7,9 @@ import AppPresenter from './AppPresenter';
 const GlobalStyle = createGlobalStyle`
   ${reset};
   ${typography};
+  a {
+    text-decoration: none !important;
+  }
 `;
 
 class App extends React.Component {
