@@ -3,6 +3,7 @@ import flatten from 'lodash.flatten';
 import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
+import { IBlock, ITransaction } from '../../@types/block';
 import { API_URL } from '../../contants';
 import typography from '../../typography';
 import AppPresenter from './AppPresenter';
@@ -16,9 +17,9 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 interface IState {
-  blocks: [];
+  blocks: IBlock[];
   isLoading: boolean;
-  transactions: any[];
+  transactions: ITransaction[];
 }
 
 class App extends Component<{}, IState> {
@@ -29,7 +30,7 @@ class App extends Component<{}, IState> {
   };
 
   public _getData = async() => {
-    const request = await axios.get(`${API_URL}/block`);
+    const request = await axios.get<IBlock[]>(`${API_URL}/block`);
     const blocks = request.data.reverse();
     const txs = flatten(blocks.map((block: any) => block.data));
 

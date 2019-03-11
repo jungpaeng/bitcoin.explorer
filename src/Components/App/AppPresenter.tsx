@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
+import { IBlock, ITransaction } from '../../@types/block';
 import Blocks from '../../Routes/Blocks';
 import Home from '../../Routes/Home';
 import Transactions from '../../Routes/Transactions';
@@ -12,9 +13,9 @@ const AppContainer = styled.div`
 `;
 
 interface IProps {
-  blocks: [];
+  blocks: IBlock[];
   isLoading: boolean;
-  transactions: any[];
+  transactions: ITransaction[];
 }
 
 const AppPresenter: FC<IProps> = ({ blocks, isLoading, transactions }) => (
