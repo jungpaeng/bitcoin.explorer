@@ -116,7 +116,7 @@ const SLink = styled(Link)`
     width: 50px;
     z-index: 999999;
 
-    &.fa {
+    &.fas {
       line-height: 50px;
     }
   }
@@ -174,14 +174,20 @@ class HeaderPresenter extends React.Component<IProps, IState> {
           <List>
             <ListItem>
               <SLink to="">
-                <i className="fa fa-inbox" />
-                <Span>Item 1</Span>
+                <i className="fas fa-home" />
+                <Span>Home</Span>
               </SLink>
             </ListItem>
             <ListItem>
               <SLink to="">
-                <i className="fa fa-heart" />
-                <Span>Item 2</Span>
+                <i className="fas fa-square" />
+                <Span>Blocks</Span>
+              </SLink>
+            </ListItem>
+            <ListItem>
+              <SLink to="">
+                <i className="fas fa-dollar-sign" />
+                <Span>Transactions</Span>
               </SLink>
             </ListItem>
           </List>
