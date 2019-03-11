@@ -1,13 +1,8 @@
 import React, { FC } from 'react';
-import { IBlock } from '../../@types/block';
-import BlocksPresenter from './BlocksPresenter';
+import BlocksPresenter, { IBlockProps } from './BlocksPresenter';
 
-interface IProps {
-  blocks: IBlock[];
-}
-
-const BlocksContainer: FC<IProps> = () => (
-  <BlocksPresenter />
+const BlocksContainer: FC<IBlockProps> = (props: IBlockProps) => (
+  <BlocksPresenter {...props} />
 );
 
 export default BlocksContainer;

@@ -1,13 +1,8 @@
 import React, { FC } from 'react';
-import { ITransaction } from '../../@types/block';
-import TransactionsPresenter from './TransactionsPresenter';
+import TransactionsPresenter, { ITransactionProps } from './TransactionsPresenter';
 
-interface IProps {
-  transactions: ITransaction[];
-}
-
-const TransactionsContainer: FC<IProps> = () => (
-  <TransactionsPresenter />
+const TransactionsContainer: FC<ITransactionProps> = (props: ITransactionProps) => (
+  <TransactionsPresenter {...props} />
 );
 
 export default TransactionsContainer;
