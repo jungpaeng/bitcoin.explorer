@@ -21,6 +21,7 @@ const HomePresenter: FC<IHomeProps> = ({ blocks, transactions }) => (
         <BlocksHeader />
         {blocks.map(block => (
           <BlocksRow
+            key={block.hash}
             index={block.index}
             hash={block.hash}
             timeStamp={block.timeStamp}
@@ -35,6 +36,7 @@ const HomePresenter: FC<IHomeProps> = ({ blocks, transactions }) => (
         <TxHeader />
         {transactions.map(transaction => (
           <TxRow
+            key={transaction .id}
             id={transaction .id}
             insOuts={`${transaction.txIns.length}/${transaction.txOuts.length}`}
             amount={sum(transaction.txOuts.map(txOut => txOut.amount))}
