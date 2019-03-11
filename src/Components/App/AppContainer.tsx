@@ -6,6 +6,7 @@ import reset from 'styled-reset';
 import { IBlock, ITransaction } from '../../@types/block';
 import { API_URL, WS_URL } from '../../contants';
 import typography from '../../typography';
+import { parseMessage } from '../../utls';
 import AppPresenter from './AppPresenter';
 
 const GlobalStyle = createGlobalStyle`
@@ -31,8 +32,9 @@ class App extends Component<{}, IState> {
 
   public _connectToWs = () => {
     const ws = new WebSocket(WS_URL);
-    ws.addEventListener('message', message => {
-      console.log(message);
+    ws.addEventListener('message', (message: any) => {
+      const parsedMessage = parseMessage(message);
+      console.log(parsedMessage);
     });
   }
 
