@@ -27,6 +27,7 @@ const MenuStatus = styled.input`
 
     & ~ main {
       left: 250px;
+      width: calc(100% - 250px);
     }
   }
 `;
@@ -135,6 +136,8 @@ const Span = styled.span`
 `;
 
 const Main = styled.main`
+  width: calc(100% - 50px);
+  height: 100%;
   position: absolute;
   transition: all 0.15s ease-in-out;
   top: 0;
