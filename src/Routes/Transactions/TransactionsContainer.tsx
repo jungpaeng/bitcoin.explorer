@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import { IPaginated, ITransaction } from '../../@types/block';
 import { API_URL } from '../../contants';
+import { addSocketEventListener } from '../../utils/ws';
 import TransactionsPresenter, { ITransactionsData } from './TransactionsPresenter';
 
 type State = ITransactionsData;
@@ -17,6 +18,16 @@ class BlocksContainer extends Component<{}, State> {
 
   public componentDidMount() {
     this.getBlocksData();
+
+    addSocketEventListener(this.setStateFromSocket);
+  }
+
+  public setStateFromSocket = (message: any) => {
+    this.setState((prevState: State) => ({
+      ...prevState,
+      total: prevState.total += 1,
+      txs: [...message[0].data, ...prevState.txs],
+    }));
   }
 
   public getBlocksData = async () => {
