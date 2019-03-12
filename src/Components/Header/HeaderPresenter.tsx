@@ -10,6 +10,7 @@ const MenuStatus = styled.input`
       width: 250px;
 
       & label[class="menu_state"] i::before {
+        margin-right: 3px;
         content: "\f053";
       }
 
@@ -40,9 +41,9 @@ const MenuStateIcon = styled.i`
   justify-content: center;
   align-items: center;
   top: 50%;
-  right: -8px;
-  width: 15px;
-  height: 15px;
+  right: -13px;
+  width: 25px;
+  height: 25px;
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 50%;
@@ -52,7 +53,7 @@ const MenuStateIcon = styled.i`
   transition: width 0.15s ease-in-out;
 
   &::before {
-    margin-top: 2px;
+    line-height: 25px;
     content: "\f054";
   }
 
