@@ -9,6 +9,7 @@
     "variable-name": false,
     "jsx-no-multiline-js": false,
     "object-shorthand-properties-first": false,
-    "jsx-no-lambda": false
+    "jsx-no-lambda": false,
+    "prefer-array-literal": false
   }
 }
