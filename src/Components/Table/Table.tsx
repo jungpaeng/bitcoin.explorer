@@ -54,6 +54,7 @@ const TableCell = styled.div`
 `;
 
 const TableLink = styled(Link)`
+  ${({ theme }) => theme.textEllipsis};
   color: #2196f3;
 `;
 
