@@ -4,7 +4,7 @@ import { IBlock, ITransaction } from '../../@types/block';
 import { API_URL } from '../../contants';
 import HomePresenter, { IHomeData } from './HomePresenter';
 
-class HomeContainer extends Component<IHomeData> {
+class HomeContainer extends Component<{}, IHomeData> {
   public state: IHomeData = {
     blocks: [],
     isLoading: true,
