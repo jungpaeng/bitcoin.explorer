@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { ILoading } from '../../@types/api';
 import { IBlock, ITransaction } from '../../@types/block';
 import { BlocksHeader, BlocksRow, Card, TxHeader, TxRow } from '../../Components/Shared';
+import Table from '../../Components/Table';
 import { getDateStrFromSeconds } from '../../utls';
 
 export interface IHomeData extends ILoading {
@@ -17,6 +18,11 @@ const TableContainer = styled.div`
 
 const HomePresenter: FC<IHomeData> = ({ blocks, txs }) => (
   <>
+    <Table
+      title="Latest Blocks"
+      headers={['Index', 'Hash', 'Amount', 'Difficulty', 'TimeStamp']}
+      data={blocks.slice(0, 5)}
+    />
     <TableContainer>
       <h2>Latest Blocks</h2>
       <Card>

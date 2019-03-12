@@ -41,14 +41,23 @@ const TableRow = styled.div`
   }
 `;
 
-const Table: FC = () => (
+interface IProps {
+  title: string;
+  headers: string[];
+  data: Array<{[key: string]: any}>;
+}
+
+const Table: FC<IProps> = ({
+  title,
+  headers,
+  data,
+}) => (
   <>
-    <h2>Latest Blocks</h2>
+    <h2>{title}</h2>
     <TableCard>
       <TableHeader>
         <TableRow>
-          {['Index', 'Hash', 'Amount', 'Difficulty', 'TimeStamp']
-            .map((header, index) => (
+          {headers.map((header, index) => (
               <HeaderItem key={index}>{header}</HeaderItem>
             ))}
         </TableRow>
