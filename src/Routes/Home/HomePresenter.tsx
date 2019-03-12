@@ -1,20 +1,21 @@
 import sum from 'lodash.sum';
 import React, { FC } from 'react';
 import styled from 'styled-components';
+import { ILoading } from '../../@types/api';
 import { IBlock, ITransaction } from '../../@types/block';
 import { BlocksHeader, BlocksRow, Card, TxHeader, TxRow } from '../../Components/Shared';
 import { getDateStrFromSeconds } from '../../utls';
 
-export interface IHomeProps {
+export interface IHomeData extends ILoading {
   blocks: IBlock[];
-  transactions: ITransaction[];
+  txs: ITransaction[];
 }
 
 const TableContainer = styled.div`
   margin: 50px 0 100px;
 `;
 
-const HomePresenter: FC<IHomeProps> = ({ blocks, transactions }) => (
+const HomePresenter: FC<IHomeData> = ({ blocks, txs }) => (
   <>
     <TableContainer>
       <h2>Latest Blocks</h2>
@@ -35,7 +36,7 @@ const HomePresenter: FC<IHomeProps> = ({ blocks, transactions }) => (
       <h2>Latest Transactions</h2>
       <Card>
         <TxHeader />
-        {transactions.map(transaction => (
+        {txs.map(transaction => (
           <TxRow
             key={transaction .id}
             id={transaction .id}
