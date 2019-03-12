@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import { IBlock, ITransaction } from '../../@types/block';
 import { API_URL } from '../../contants';
+import { addSocketEventListener } from '../../utils/ws';
 import HomePresenter, { IHomeData } from './HomePresenter';
 
 class HomeContainer extends Component<{}, IHomeData> {
@@ -13,6 +14,16 @@ class HomeContainer extends Component<{}, IHomeData> {
 
   public componentDidMount() {
     this.getHomeData();
+
+    addSocketEventListener(this.setStateFromSocket);
+  }
+
+  public setStateFromSocket = (message: any) => {
+    this.setState((prevState: IHomeData) => ({
+      ...prevState,
+      blocks: [...message, ...prevState.blocks],
+      txs: [...message[0].data, ...prevState.txs],
+    }));
   }
 
   public getHomeData = async () => {
