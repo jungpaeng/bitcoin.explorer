@@ -26,35 +26,14 @@ const HomePresenter: FC<IHomeData> = ({ blocks, txs }) => (
       linkPages={['blocks', 'blocks']}
       linkParams={['index', 'index']}
     />
-    <TableContainer>
-      <h2>Latest Blocks</h2>
-      <Card>
-        <BlocksHeader />
-        {blocks.map(block => (
-          <BlocksRow
-            key={block.hash}
-            index={block.index}
-            hash={block.hash}
-            timeStamp={getDateStrFromSeconds(block.timeStamp)}
-            difficulty={block.difficulty}
-          />
-        ))}
-      </Card>
-    </TableContainer>
-    <TableContainer>
-      <h2>Latest Transactions</h2>
-      <Card>
-        <TxHeader />
-        {txs.map(transaction => (
-          <TxRow
-            key={transaction .id}
-            id={transaction .id}
-            insOuts={`${transaction.txIns.length}/${transaction.txOuts.length}`}
-            amount={sum(transaction.txOuts.map(txOut => txOut.amount))}
-          />
-        ))}
-      </Card>
-    </TableContainer>
+    <Table
+      title="Latest Transactions"
+      headers={['Amount', 'Transaction ID', 'TimeStamp']}
+      data={txs.slice(0, 5)}
+      selected={['amount', 'id', 'timeStamp']}
+      linkPages={['transactions', 'transactions']}
+      linkParams={['id', 'id']}
+    />
   </>
 );
 
