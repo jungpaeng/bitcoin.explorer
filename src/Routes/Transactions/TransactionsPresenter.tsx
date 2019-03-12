@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import styled from 'styled-components';
 import { ILoading } from '../../@types/api';
 import { IPaginated, ITransaction } from '../../@types/block';
 import Table from '../../Components/Table';
@@ -10,10 +9,6 @@ type Pagenated = Omit<IPaginated, 'data' | 'perPage'>;
 export interface ITransactionsData extends ILoading, Pagenated {
   txs: ITransaction[];
 }
-
-const TableContainer = styled.div`
-  margin: 50px 0 100px;
-`;
 
 const TransactionsPresenter: FC<ITransactionsData> = ({
   txs,
