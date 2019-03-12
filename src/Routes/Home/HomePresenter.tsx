@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import styled from 'styled-components';
 import { ILoading } from '../../@types/api';
 import { IBlock, ITransaction } from '../../@types/block';
 import Table from '../../Components/Table';
