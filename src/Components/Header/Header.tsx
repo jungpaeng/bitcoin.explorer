@@ -143,7 +143,7 @@ const Main = styled.main`
   transition: all 0.15s ease-in-out;
   top: 0;
   left: 50px;
-  padding: 0 20px;
+  padding: 30px;
 `;
 
 interface IProps {
