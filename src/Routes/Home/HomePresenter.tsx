@@ -22,6 +22,9 @@ const HomePresenter: FC<IHomeData> = ({ blocks, txs }) => (
       title="Latest Blocks"
       headers={['Index', 'Hash', 'Amount', 'Difficulty', 'TimeStamp']}
       data={blocks.slice(0, 5)}
+      selected={['index', 'hash', 'amount', 'difficulty', 'timeStamp']}
+      linkPages={['blocks', 'blocks']}
+      linkParams={['index', 'index']}
     />
     <TableContainer>
       <h2>Latest Blocks</h2>
