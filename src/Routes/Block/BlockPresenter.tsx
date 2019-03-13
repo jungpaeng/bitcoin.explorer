@@ -9,25 +9,28 @@ export interface IBlockData extends ILoading {
   block: IBlock;
 }
 
-const BlockPresenter: FC<IBlockData> = ({ block }) => (
+const BlockPresenter: FC<IBlockData> = ({
+  block: { index, hash, timeStamp, difficulty, nonce, data },
+}) => (
   <>
-    <Title>Block #{block.index}</Title>
+    <Title>Block #{index}</Title>
     <Title>
-      <ImportantText>Hash:</ImportantText> {block.hash}
+      <ImportantText>Hash:</ImportantText> {hash}
     </Title>
     <Title>
-      <ImportantText>TimeStamp:</ImportantText> {getDateStrFromSeconds(block.timeStamp)}
+      <ImportantText>TimeStamp:</ImportantText> {getDateStrFromSeconds(timeStamp)}
     </Title>
     <Title>
-      <ImportantText>Difficulty:</ImportantText> {block.difficulty}
+      <ImportantText>Difficulty:</ImportantText> {difficulty}
     </Title>
     <Title>
-      <ImportantText>Nonce:</ImportantText> {block.nonce}
+      <ImportantText>Nonce:</ImportantText> {nonce}
     </Title>
 
     <TransactionTable
       title="Transactions"
       headers={['From', 'Amount', 'To', 'Timestamp', 'See detail']}
+      data={data}
     />
   </>
 );
