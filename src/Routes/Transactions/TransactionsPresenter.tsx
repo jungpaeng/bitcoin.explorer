@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { ILoading } from '../../@types/api';
 import { IPaginated, ITransaction } from '../../@types/block';
-import Table from '../../Components/Table';
+import DataTable from '../../Components/Table/DataTable';
 import { Omit } from '../../utils/typescript';
 
 type Pagenated = Omit<IPaginated, 'data' | 'perPage'>;
@@ -14,7 +14,7 @@ const TransactionsPresenter: FC<ITransactionsData> = ({
   txs,
   total,
 }) => (
-  <Table
+  <DataTable
     title={`All Transactions (${total || 0})`}
     data={txs.slice(0, 15)}
     headers={['Amount', 'Transaction ID', 'Timestamp']}

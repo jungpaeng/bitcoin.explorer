@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { ILoading } from '../../@types/api';
 import { IBlock, ITransaction } from '../../@types/block';
-import Table from '../../Components/Table';
+import DataTable from '../../Components/Table/DataTable';
 
 export interface IHomeData extends ILoading {
   blocks: IBlock[];
@@ -10,7 +10,7 @@ export interface IHomeData extends ILoading {
 
 const HomePresenter: FC<IHomeData> = ({ blocks, txs }) => (
   <>
-    <Table
+    <DataTable
       title="Latest Blocks"
       headers={['Index', 'Hash', 'Amount', 'Difficulty', 'TimeStamp']}
       data={blocks.slice(0, 5)}
@@ -18,7 +18,7 @@ const HomePresenter: FC<IHomeData> = ({ blocks, txs }) => (
       linkPages={['blocks', 'blocks']}
       linkParams={['index', 'index']}
     />
-    <Table
+    <DataTable
       title="Latest Transactions"
       headers={['Amount', 'Transaction ID', 'TimeStamp']}
       data={txs.slice(0, 5)}

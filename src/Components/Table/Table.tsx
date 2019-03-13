@@ -1,7 +1,6 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { getDateStrFromSeconds } from '../../utls';
 
 const TableCard = styled.div`
   background-color: #fff;
@@ -27,7 +26,7 @@ const HeaderItem = styled.span`
   ${({ theme }) => theme.textEllipsis};
 `;
 
-const TableRow = styled.div`
+export const TableRow = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 15px;
@@ -49,11 +48,11 @@ const TableRow = styled.div`
   }
 `;
 
-const TableCell = styled.div`
+export const TableCell = styled.div`
   ${({ theme }) => theme.textEllipsis};
 `;
 
-const TableLink = styled(Link)`
+export const TableLink = styled(Link)`
   ${({ theme }) => theme.textEllipsis};
   color: #2196f3;
 `;
@@ -61,19 +60,13 @@ const TableLink = styled(Link)`
 interface IProps {
   title: string;
   headers: string[];
-  data: Array<{[key: string]: any}>;
-  selected: string[];
-  linkPages: string[];
-  linkParams: string[];
+  children: ReactNode;
 }
 
 const Table: FC<IProps> = ({
   title,
   headers,
-  data,
-  selected,
-  linkPages,
-  linkParams,
+  children,
 }) => (
   <>
     <h2>{title}</h2>
@@ -86,27 +79,7 @@ const Table: FC<IProps> = ({
         </TableRow>
       </TableHeader>
       <TableData>
-        {data.map((item, index) => (
-          <TableRow key={index}>
-            {selected.map((key, keyIndex) => {
-              if (!!linkPages[keyIndex]) {
-                return (
-                  <TableLink to={`/${linkPages[keyIndex]}/${item[linkParams[keyIndex]]}`}>
-                    {item[key]}
-                  </TableLink>
-                );
-              }
-              return (
-                  <TableCell key={keyIndex}>
-                    {key === 'timeStamp' ?
-                      getDateStrFromSeconds(item[key]) :
-                      item[key]}
-                  </TableCell>
-              );
-
-            })}
-          </TableRow>
-        ))}
+        {children}
       </TableData>
     </TableCard>
   </>
