@@ -1,10 +1,8 @@
 import React, { FC } from 'react';
 import { getDateStrFromSeconds } from '../../../utls';
-import Table, { TableCell, TableLink, TableRow } from '../Table';
+import Table, { ITableProps, TableCell, TableLink, TableRow } from '../Table';
 
-interface IProps {
-  title: string;
-  headers: string[];
+interface IProps extends ITableProps {
   data: Array<{[key: string]: any}>;
   selected: string[];
   linkPages: string[];

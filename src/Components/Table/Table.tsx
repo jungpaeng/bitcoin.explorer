@@ -57,9 +57,12 @@ export const TableLink = styled(Link)`
   color: #2196f3;
 `;
 
-interface IProps {
+export interface ITableProps {
   title: string;
   headers: string[];
+}
+
+interface IProps extends ITableProps{
   children: ReactNode;
 }
 
