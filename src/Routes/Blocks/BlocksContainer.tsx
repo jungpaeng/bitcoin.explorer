@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import { IBlock, IPaginated } from '../../@types/block';
 import { API_URL } from '../../contants';
 import { addSocketEventListener } from '../../utils/ws';
-import BlocksPresenter, { IBlocsData } from './BlocksPresenter';
+import BlocksPresenter, { IBlocksData } from './BlocksPresenter';
 
-type State = IBlocsData;
+type State = IBlocksData;
 
 class BlocksContainer extends Component<{}, State> {
   public state: State = {

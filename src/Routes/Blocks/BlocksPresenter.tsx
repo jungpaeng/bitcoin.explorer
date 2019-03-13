@@ -6,11 +6,11 @@ import { Omit } from '../../utils/typescript';
 
 type Pagenated = Omit<IPaginated, 'data' | 'perPage'>;
 
-export interface IBlocsData extends ILoading, Pagenated {
+export interface IBlocksData extends ILoading, Pagenated {
   blocks: IBlock[];
 }
 
-const BlocksPresenter: FC<IBlocsData> = ({
+const BlocksPresenter: FC<IBlocksData> = ({
   blocks,
   total,
 }) => (
