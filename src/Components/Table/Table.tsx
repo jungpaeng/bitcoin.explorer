@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { LinkText } from '../Shared/Shared';
 
 const TableCard = styled.div`
   background-color: #fff;
@@ -52,7 +52,7 @@ export const TableCell = styled.div`
   ${({ theme }) => theme.textEllipsis};
 `;
 
-export const TableLink = styled(Link)`
+export const TableLink = styled(LinkText)`
   ${({ theme }) => theme.textEllipsis};
   color: #2196f3;
 `;
@@ -62,7 +62,7 @@ export interface ITableProps {
   headers: string[];
 }
 
-interface IProps extends ITableProps{
+interface IProps extends ITableProps {
   children: ReactNode;
 }
 

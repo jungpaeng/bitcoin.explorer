@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Block from '../../Routes/Block';
 import Blocks from '../../Routes/Blocks';
 import Home from '../../Routes/Home';
+import Transaction from '../../Routes/Transaction';
 import Transactions from '../../Routes/Transactions';
 import Header from '../Header';
 
@@ -35,6 +36,10 @@ const AppPresenter: FC = () => (
           <Route
             component={Block}
             path="/blocks/:index"
+          />
+          <Route
+            component={Transaction}
+            path="/transactions/:id"
           />
           </Switch>
       </Header>
