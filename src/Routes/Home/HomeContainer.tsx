@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { IBlock, ITransaction } from '../../@types/block';
-import { API_URL } from '../../contants';
+import { API_URL, URL_BLOCKS, URL_TRANSACTIONS } from '../../contants';
 import { addSocketEventListener } from '../../utils/ws';
 import HomePresenter, { IHomeData } from './HomePresenter';
 
@@ -27,8 +27,8 @@ class HomeContainer extends Component<{}, IHomeData> {
   }
 
   public getHomeData = async () => {
-    const { data: blocks } = await axios.get<IBlock[]>(`${API_URL}/blocks/latest`);
-    const { data: txs } = await axios.get<ITransaction[]>(`${API_URL}/transactions/latest`);
+    const { data: blocks } = await axios.get<IBlock[]>(`${API_URL}/${URL_BLOCKS}/latest`);
+    const { data: txs } = await axios.get<ITransaction[]>(`${API_URL}/${URL_TRANSACTIONS}/latest`);
 
     this.setState({
       blocks,

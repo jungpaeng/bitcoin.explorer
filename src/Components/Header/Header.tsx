@@ -1,6 +1,7 @@
 import React, { Component, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { URL_BLOCKS, URL_TRANSACTIONS } from '../../contants';
 
 const MenuStatus = styled.input`
   display: none;
@@ -196,8 +197,8 @@ class Header extends Component<IProps, IState> {
             </ListItem>
             <ListItem>
               <SLink
-                isActive={window.location.pathname === '/blocks'}
-                to="/blocks"
+                isActive={window.location.pathname === `/${URL_BLOCKS}`}
+                to={`/${URL_BLOCKS}`}
               >
                 <i className="fas fa-square" />
                 <Span>Blocks</Span>
@@ -205,8 +206,8 @@ class Header extends Component<IProps, IState> {
             </ListItem>
             <ListItem>
               <SLink
-                isActive={window.location.pathname === '/transactions'}
-                to="/transactions"
+                isActive={window.location.pathname === `/${URL_TRANSACTIONS}`}
+                to={`${URL_TRANSACTIONS}`}
               >
                 <i className="fas fa-dollar-sign" />
                 <Span>Transactions</Span>

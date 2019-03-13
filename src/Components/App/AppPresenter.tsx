@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
+import { URL_ADDRESS, URL_BLOCKS, URL_TRANSACTIONS } from '../../contants';
 import Address from '../../Routes/Address';
 import Block from '../../Routes/Block';
 import Blocks from '../../Routes/Blocks';
@@ -27,24 +28,24 @@ const AppPresenter: FC = () => (
           <Route
             component={Blocks}
             exact={true}
-            path="/blocks"
+            path={`/${URL_BLOCKS}`}
           />
           <Route
             component={Transactions}
             exact={true}
-            path="/transactions"
+            path={`/${URL_TRANSACTIONS}`}
           />
           <Route
             component={Block}
-            path="/blocks/:index"
+            path={`/${URL_BLOCKS}/:index`}
           />
           <Route
             component={Transaction}
-            path="/transactions/:id"
+            path={`/${URL_TRANSACTIONS}/:id`}
           />
           <Route
             component={Address}
-            path={'/address/:address'}
+            path={`/${URL_ADDRESS}/:address`}
           />
           </Switch>
       </Header>

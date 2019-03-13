@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { ITransaction } from '../../@types/block';
-import { API_URL } from '../../contants';
+import { API_URL, URL_TRANSACTIONS } from '../../contants';
 import TransactionPresenter, { ITransactionData } from './TransactionPresenter';
 
 interface IMatchParams {
@@ -33,7 +33,7 @@ class TransactionContainer extends Component<Props, State> {
 
   public _getTransactionData = async (id: string) => {
     const { data: tx } = await axios.get<ITransaction>(
-      `${API_URL}/transactions/${id}`,
+      `${API_URL}/${URL_TRANSACTIONS}/${id}`,
     );
     this.setState({
       isLoading: false,

@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { IBlock } from '../../@types/block';
-import { API_URL } from '../../contants';
+import { API_URL, URL_BLOCKS } from '../../contants';
 import BlockPresenter, { IBlockData } from './BlockPresenter';
 
 interface IMatchParams {
@@ -33,7 +33,7 @@ class BlockContainer extends Component<Props, State> {
   }
 
   public _getBlockData = async (index: string) => {
-    const { data: block } = await axios.get<IBlock>(`${API_URL}/blocks/${index}`);
+    const { data: block } = await axios.get<IBlock>(`${API_URL}/${URL_BLOCKS}/${index}`);
     this.setState({
       block,
       isLoading: false,

@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { ITransaction } from '../../../@types/block';
+import { URL_ADDRESS, URL_TRANSACTIONS } from '../../../contants';
 import { getDateStrFromSeconds } from '../../../utls';
 import Table, { ITableProps, TableCell, TableLink, TableRow } from '../Table';
 
@@ -18,11 +19,11 @@ const TransactionTable: FC<IProps> = ({
   >
     {data.map(({ from, to, amount, timeStamp, id }, index) => (
       <TableRow key={index}>
-        <TableLink to={`/address/${from}`}>{from}</TableLink>
+        <TableLink to={`/${URL_ADDRESS}/${from}`}>{from}</TableLink>
         <TableCell>{amount}</TableCell>
-        <TableLink to={`/address/${to}`}>{to}</TableLink>
+        <TableLink to={`/${URL_ADDRESS}/${to}`}>{to}</TableLink>
         <TableCell>{getDateStrFromSeconds(timeStamp)}</TableCell>
-        <TableLink to={`/transactions/${id}`}>Link</TableLink>
+        <TableLink to={`/${URL_TRANSACTIONS}/${id}`}>Link</TableLink>
       </TableRow>
     ))}
   </Table>

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { IPaginated, ITransaction } from '../../@types/block';
-import { API_URL } from '../../contants';
+import { API_URL, URL_TRANSACTIONS } from '../../contants';
 import { addSocketEventListener } from '../../utils/ws';
 import TransactionsPresenter, { ITransactionsData } from './TransactionsPresenter';
 
@@ -34,7 +34,7 @@ class BlocksContainer extends Component<{}, State> {
     const { data: {
       currentPage, total, totalPages, data: txs,
     } } = await axios.get<IPaginated<ITransaction[]>>(
-      `${API_URL}/transactions?page=${this.state.currentPage}`,
+      `${API_URL}/${URL_TRANSACTIONS}?page=${this.state.currentPage}`,
     );
 
     this.setState({

@@ -3,6 +3,7 @@ import { ILoading } from '../../@types/api';
 import { ITransaction } from '../../@types/block';
 import { ImportantText, Title } from '../../Components/Shared';
 import { LinkText } from '../../Components/Shared/Shared';
+import { URL_ADDRESS } from '../../contants';
 import { getDateStrFromSeconds } from '../../utls';
 
 export interface ITransactionData extends ILoading {
@@ -24,11 +25,11 @@ const TransactionPresenter: FC<ITransactionData> = ({
     </Title>
     <Title>
       <ImportantText>From:</ImportantText>
-      <LinkText to={`/address/${from}`}>{from}</LinkText>
+      <LinkText to={`/${URL_ADDRESS}/${from}`}>{from}</LinkText>
     </Title>
     <Title>
       <ImportantText>To:</ImportantText>
-      <LinkText to={`/address/${to}`}>{to}</LinkText>
+      <LinkText to={`/${URL_ADDRESS}/${to}`}>{to}</LinkText>
     </Title>
   </>
 );
