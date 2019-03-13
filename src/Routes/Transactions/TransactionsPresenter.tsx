@@ -18,7 +18,7 @@ const TransactionsPresenter: FC<ITransactionsData> = ({
     title={`All Transactions (${total || 0})`}
     data={txs.slice(0, 15)}
     headers={['Amount', 'Transaction ID', 'Timestamp']}
-    selected={['amount', 'id', 'timestamp']}
+    selected={['amount', 'id', 'timeStamp']}
     linkPages={['transactions', 'transactions']}
     linkParams={['id', 'id']}
   />
