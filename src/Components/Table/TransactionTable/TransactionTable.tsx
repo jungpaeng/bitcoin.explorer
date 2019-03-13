@@ -18,9 +18,9 @@ const TransactionTable: FC<IProps> = ({
   >
     {data.map(({ from, to, amount, timeStamp, id }, index) => (
       <TableRow key={index}>
-        <TableLink to={`/addresses/${from}`}>{from}</TableLink>
+        <TableLink to={`/address/${from}`}>{from}</TableLink>
         <TableCell>{amount}</TableCell>
-        <TableLink to={`/addresses/${to}`}>{to}</TableLink>
+        <TableLink to={`/address/${to}`}>{to}</TableLink>
         <TableCell>{getDateStrFromSeconds(timeStamp)}</TableCell>
         <TableLink to={`/transactions/${id}`}>Link</TableLink>
       </TableRow>

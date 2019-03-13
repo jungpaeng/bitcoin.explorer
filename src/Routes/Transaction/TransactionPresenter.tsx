@@ -24,11 +24,11 @@ const TransactionPresenter: FC<ITransactionData> = ({
     </Title>
     <Title>
       <ImportantText>From:</ImportantText>
-      <LinkText to={`/addresses/${from}`}>{from}</LinkText>
+      <LinkText to={`/address/${from}`}>{from}</LinkText>
     </Title>
     <Title>
       <ImportantText>To:</ImportantText>
-      <LinkText to={`/addresses/${to}`}>{to}</LinkText>
+      <LinkText to={`/address/${to}`}>{to}</LinkText>
     </Title>
   </>
 );
