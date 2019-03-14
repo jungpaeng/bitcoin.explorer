@@ -9,12 +9,15 @@ interface ITxOut {
   amount: number;
 }
 
-export interface IPaginated<T = []> {
+export interface IPage {
   currentPage: number;
+  totalPages: number;
+}
+
+export interface IPaginated<T = []> extends IPage {
   data: T;
   perPage: number;
   total: number;
-  totalPages: number;
 }
 
 export interface ITransaction {
