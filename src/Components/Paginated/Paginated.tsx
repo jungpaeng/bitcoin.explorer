@@ -39,14 +39,16 @@ const PaginatedContainer = styled.div`
 
 interface IProps {
   pageCount: number;
+  onPageChange: (currentPage: number) => void;
 }
 
-const Paginated: FC<IProps> = ({ pageCount }) => (
+const Paginated: FC<IProps> = ({ pageCount, onPageChange }) => (
   <PaginatedContainer>
     <ReactPaginate
       pageCount={pageCount}
       pageRangeDisplayed={2}
       marginPagesDisplayed={3}
+      onPageChange={({ selected }) => onPageChange(selected + 1)}
       previousLabel="Prev"
       nextLabel="Next"
       containerClassName="paginated-container"

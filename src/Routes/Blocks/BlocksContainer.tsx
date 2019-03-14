@@ -2,10 +2,11 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import { IBlock, IPaginated } from '../../@types/block';
 import { API_URL, URL_BLOCKS } from '../../contants';
+import { Omit } from '../../utils/typescript';
 import { addSocketEventListener } from '../../utils/ws';
 import BlocksPresenter, { IBlocksData } from './BlocksPresenter';
 
-type State = IBlocksData;
+type State = Omit<IBlocksData, 'setCurrentPage'>;
 
 class BlocksContainer extends Component<{}, State> {
   public state: State = {
@@ -20,6 +21,15 @@ class BlocksContainer extends Component<{}, State> {
     this.getBlocksData();
 
     addSocketEventListener(this.setStateFromSocket);
+  }
+
+  public componentDidUpdate(_: {}, prevState: State) {
+    const { currentPage: prevPage } = prevState;
+    const { currentPage } = this.state;
+
+    if (prevPage !== currentPage) {
+      this.getBlocksData();
+    }
   }
 
   public setStateFromSocket = (message: any) => {
@@ -46,10 +56,15 @@ class BlocksContainer extends Component<{}, State> {
     });
   }
 
+  public setCurrentPage = (currentPage: number) => {
+    this.setState({ currentPage });
+  }
+
   public render() {
     return (
       <BlocksPresenter
         {...this.state}
+        setCurrentPage={this.setCurrentPage}
       />
     );
   }
