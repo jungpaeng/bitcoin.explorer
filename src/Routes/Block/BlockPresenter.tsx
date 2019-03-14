@@ -3,7 +3,7 @@ import { ILoading } from '../../@types/api';
 import { IBlock } from '../../@types/block';
 import { ImportantText, Title } from '../../Components/Shared';
 import TransactionTable from '../../Components/Table/TransactionTable';
-import { getDateStrFromSeconds } from '../../utls';
+import { getDateStrFromSeconds } from '../../utils/format';
 
 export interface IBlockData extends ILoading {
   block: IBlock;

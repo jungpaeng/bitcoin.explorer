@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { getDateStrFromSeconds } from '../../../utls';
+import { getDateStrFromSeconds } from '../../../utils/format';
 import Table, { ITableProps, TableCell, TableLink, TableRow } from '../Table';
 
 interface IProps extends ITableProps {

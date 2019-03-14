@@ -1,5 +1,5 @@
 import { WS_URL } from '../contants';
-import { stringToJSON } from '../utls';
+import { stringToJSON } from './format';
 
 export const parseMessage = (message: any) => {
   if (typeof message.data === 'string') {

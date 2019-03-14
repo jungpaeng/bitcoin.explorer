@@ -4,7 +4,7 @@ import { ITransaction } from '../../@types/block';
 import { ImportantText, Title } from '../../Components/Shared';
 import { LinkText } from '../../Components/Shared/Shared';
 import { URL_ADDRESS } from '../../contants';
-import { getDateStrFromSeconds } from '../../utls';
+import { getDateStrFromSeconds } from '../../utils/format';
 
 export interface ITransactionData extends ILoading {
   tx: ITransaction;

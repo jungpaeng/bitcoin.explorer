@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { ITransaction } from '../../../@types/block';
 import { URL_ADDRESS, URL_TRANSACTIONS } from '../../../contants';
-import { getDateStrFromSeconds } from '../../../utls';
+import { getDateStrFromSeconds } from '../../../utils/format';
 import Table, { ITableProps, TableCell, TableLink, TableRow } from '../Table';
 
 interface IProps extends ITableProps {
