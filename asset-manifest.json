@@ -1,11 +1,11 @@
 {
-  "main.js": "/bitcoin.explorer/static/js/main.cd9dcefc.chunk.js",
-  "main.js.map": "/bitcoin.explorer/static/js/main.cd9dcefc.chunk.js.map",
+  "main.js": "/bitcoin.explorer/static/js/main.999f4d0b.chunk.js",
+  "main.js.map": "/bitcoin.explorer/static/js/main.999f4d0b.chunk.js.map",
   "runtime~main.js": "/bitcoin.explorer/static/js/runtime~main.acfc68c6.js",
   "runtime~main.js.map": "/bitcoin.explorer/static/js/runtime~main.acfc68c6.js.map",
   "static/js/2.fd9daa37.chunk.js": "/bitcoin.explorer/static/js/2.fd9daa37.chunk.js",
   "static/js/2.fd9daa37.chunk.js.map": "/bitcoin.explorer/static/js/2.fd9daa37.chunk.js.map",
   "index.html": "/bitcoin.explorer/index.html",
-  "precache-manifest.e53ffb32436ecd3c600f080b2d6da5b0.js": "/bitcoin.explorer/precache-manifest.e53ffb32436ecd3c600f080b2d6da5b0.js",
+  "precache-manifest.927aa61a2f964c39a678adf4657b6b6a.js": "/bitcoin.explorer/precache-manifest.927aa61a2f964c39a678adf4657b6b6a.js",
   "service-worker.js": "/bitcoin.explorer/service-worker.js"
 }
