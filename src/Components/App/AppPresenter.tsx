@@ -8,7 +8,7 @@ import Blocks from '../../Routes/Blocks';
 import Home from '../../Routes/Home';
 import Transaction from '../../Routes/Transaction';
 import Transactions from '../../Routes/Transactions';
-import Header from '../Header';
+import HeaderContainer from '../HeaderContainer';
 
 const AppContainer = styled.div`
   background-color: #fafafa;
@@ -18,7 +18,7 @@ const AppContainer = styled.div`
 const AppPresenter: FC = () => (
   <HashRouter>
     <AppContainer>
-      <Header>
+      <HeaderContainer>
         <Switch>
           <Route
             component={Home}
@@ -48,7 +48,7 @@ const AppPresenter: FC = () => (
             path={`/${URL_ADDRESS}/:address`}
           />
           </Switch>
-      </Header>
+      </HeaderContainer>
     </AppContainer>
   </HashRouter>
 );

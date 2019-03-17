@@ -153,7 +153,7 @@ interface IState {
   menuStatus: boolean;
 }
 
-class Header extends Component<IProps, IState> {
+class HeaderContainer extends Component<IProps, IState> {
   public state: IState = {
     menuStatus: true,
   };
@@ -223,4 +223,4 @@ class Header extends Component<IProps, IState> {
   }
 }
 
-export default Header;
+export default HeaderContainer;
