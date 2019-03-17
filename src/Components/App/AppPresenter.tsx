@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import { URL_ADDRESS, URL_BLOCKS, URL_TRANSACTIONS } from '../../contants';
 import Address from '../../Routes/Address';
@@ -16,7 +16,7 @@ const AppContainer = styled.div`
 `;
 
 const AppPresenter: FC = () => (
-  <BrowserRouter>
+  <HashRouter>
     <AppContainer>
       <Header>
         <Switch>
@@ -50,7 +50,7 @@ const AppPresenter: FC = () => (
           </Switch>
       </Header>
     </AppContainer>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 export default AppPresenter;
