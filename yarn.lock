@@ -8604,6 +8604,11 @@ react-scripts@2.1.8:
   optionalDependencies:
     fsevents "1.2.4"
 
+react-sidenav@^3.1.9:
+  version "3.1.9"
+  resolved "https://registry.yarnpkg.com/react-sidenav/-/react-sidenav-3.1.9.tgz#277f3d9c62ad767861d8512ac482cfe4d982ce9c"
+  integrity sha512-ot2Zqfzd9uNOS6/Hz3lS79G9RqEMWdANWWbULENAnu9ofPnbP8l2nhw7eBS4AmiIyrpDNqwzGcmdJ2S7BAHZ2A==
+
 react@^16.8.4:
   version "16.8.4"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.4.tgz#fdf7bd9ae53f03a9c4cd1a371432c206be1c4768"
