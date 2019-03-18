@@ -10,6 +10,7 @@
     "jsx-no-multiline-js": false,
     "object-shorthand-properties-first": false,
     "jsx-no-lambda": false,
-    "prefer-array-literal": false
+    "prefer-array-literal": false,
+    "no-submodule-imports": false
   }
 }
